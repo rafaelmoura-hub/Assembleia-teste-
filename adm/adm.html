@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123c30"><title>Assembleia | Administração</title><link rel="stylesheet" href="adm.css">
+</head>
+<body>
+<main id="loginScreen" class="login-screen">
+  <section class="login-card"><a class="brand" href="#"><span class="brand-mark">A</span><span>assembleia<span class="brand-sub">GESTÃO DIGITAL</span></span></a>
+    <p class="eyebrow">ÁREA ADMINISTRATIVA</p><h1>Bem-vindo de volta</h1><p class="muted">Entre para gerenciar suas assembleias.</p>
+    <form id="loginForm"><label>Usuário<input id="loginUser" autocomplete="username" placeholder="Julia_adm" required></label><label>Senha<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Sua senha" required></label><button class="button primary full" type="submit">Entrar no painel</button><p id="loginError" class="form-error" aria-live="polite"></p></form>
+    <div class="login-hint"><span class="hint-icon">i</span><span>O acesso administrativo é concedido pelo responsável do sistema.</span></div>
+  </section><aside class="login-art"><div class="art-inner"><span class="art-kicker">DECISÕES QUE MOVEM</span><h2>O futuro da sua comunidade começa com uma boa assembleia.</h2><p>Organize reuniões, acompanhe quóruns e transforme votos em decisões transparentes.</p><div class="art-line"></div><div class="art-foot"><span>SEGURO · SIMPLES · PARTICIPATIVO</span><span>01 / 03</span></div></div></aside>
+</main>
+<div id="app" class="app-shell hidden">
+  <aside class="sidebar"><a class="brand side-brand" href="#"><span class="brand-mark">A</span><span>assembleia<span class="brand-sub">GESTÃO DIGITAL</span></span></a><div class="side-label">MENU PRINCIPAL</div><nav id="navigation"><button class="nav-item active" data-view="overview"><span class="nav-icon">▦</span>Visão geral</button><button class="nav-item" data-view="meetings"><span class="nav-icon">▣</span>Assembleias</button><button class="nav-item" data-view="participants"><span class="nav-icon">♙</span>Participantes</button><button class="nav-item" data-view="reports"><span class="nav-icon">▤</span>Relatórios</button><button class="nav-item" data-view="users"><span class="nav-icon">♧</span>Usuários</button></nav><div class="side-bottom"><div class="help-box"><span class="help-dot">?</span><div><strong>Precisa de ajuda?</strong><span>Acesse nosso guia</span></div><span class="help-arrow">↗</span></div><div class="profile"><span class="avatar">AD</span><div><strong id="adminName">Administrador</strong><span>Administrador</span></div><button id="logoutButton" class="logout" title="Sair">↪</button></div></div></aside>
+  <section class="main-area"><header class="topbar"><button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">☰</button><div class="breadcrumb">Painel <span>/</span> <strong id="breadcrumbTitle">Visão geral</strong></div><div class="top-actions"><span class="today" id="todayLabel"></span><button class="icon-button" title="Notificações">♧<i></i></button><span class="avatar small-avatar">AD</span></div></header><main id="view" class="content"></main></section>
+</div>
+<div id="modalRoot"></div><div id="toast" class="toast" role="status"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../supabase-config.js"></script><script>window.assembleiaDb=window.supabase.createClient(window.ASSEMBLEIA_SUPABASE_CONFIG.url,window.ASSEMBLEIA_SUPABASE_CONFIG.publishableKey)</script><script src="../supabase-admin.js"></script>
+</body></html>
